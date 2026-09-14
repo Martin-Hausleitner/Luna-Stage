@@ -34,7 +34,7 @@ with sync_playwright() as p:
         if ceo:page.evaluate('Luna.scene.ceo=true;Luna.hud.sync();Luna.gpu.invalidate()')
         page.wait_for_timeout(600)
         page.evaluate('Luna.gpu.render(1920,1080)')
-        page.wait_for_timeout(450)
+        page.wait_for_function('Luna.gpu.samples>=28',timeout=120000)
         path=out/(('live-' if args.live else '')+name+'.png');page.screenshot(path=str(path))
         report['screenshots'].append({'name':path.name,'sha256':hashlib.sha256(path.read_bytes()).hexdigest()});print('SHOT',path.name,flush=True)
     if report['gpu']['ready']:
