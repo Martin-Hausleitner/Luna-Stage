@@ -21,6 +21,16 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install Pillow==11.3.0
+      - name: Read reviewed run ID
+        id: reviewed
+        run: python -c "import json,os; c=json.load(open('qa/stage-v3/PUBLISH.json')); open(os.environ['GITHUB_OUTPUT'],'a').write('run_id='+str(c['run_id'])+'\n')"
+      - uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ steps.reviewed.outputs.run_id }}
+          pattern: stage-v3-frame-*
+          merge-multiple: true
+          path: _reviewed
       - name: Assemble reviewed artifacts and publish without overwriting concurrent changes
         env:
           GH_TOKEN: ${{ github.token }}
