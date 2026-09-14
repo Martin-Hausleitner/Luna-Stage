@@ -1,0 +1,27 @@
+{
+  "verified_at_utc": "2026-09-14T08:21:52.830067+00:00",
+  "source_sha256": "17e052f77651eace4c663a23bd2aa39fecd9e6249df100d318e0142a0b0ca5f8",
+  "runtime_changed": false,
+  "local": "PASS",
+  "pages": "PASS",
+  "visual": "PASS",
+  "visual_fix_loops": 0,
+  "viewport": [
+    1920,
+    1080
+  ],
+  "browser": "152.0.7977.83",
+  "adapter": {
+    "vendor": "apple",
+    "architecture": "metal-3",
+    "device": "",
+    "description": ""
+  },
+  "film_wall_seconds": 48.11620000000298,
+  "live_matches_local_pixels": true,
+  "reports": {
+    "local-report.json": "534913680dcaa825fe1ebc6639ebd364f885f5746acab4c3a78c961e277f18b9",
+    "behaviour-report.json": "392cea548c4ad8cb286584328b90c9730bc8116371c1206f76963b747c32f8c5",
+    "live-report.json": "dedadb8933f8793174503eee28e45736d6395297b49a6b0260a7848e2f50d738"
+  }
+}

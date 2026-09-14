@@ -74,3 +74,9 @@ python3 qa/verify.py --live --url https://Martin-Hausleitner.github.io/Luna-Stag
 ```
 
 MIT licensed. The company name and product identification do not grant rights to third-party marks.
+
+## Verified release — 14 September 2026 / Geprüfte Veröffentlichung
+
+**Local PASS / Pages PASS.** Fresh native Apple WebGPU checks, all seven 1920 × 1080 views, both requested live views and the complete 48-second film passed. See [visual acceptance](qa/VISION.md), [verification receipt](qa/revalidation.json), [local checks](qa/local-report.json), [film and resilience checks](qa/behaviour-report.json) and [live checks](qa/live-report.json). The working runtime was preserved byte-for-byte; the fresh evidence and previously missing visual report complete this handoff.
+
+**Lokal PASS / Pages PASS.** Die sieben Ansichten, die beiden Live-Aufnahmen und der vollständige Film wurden erneut im echten Browser geprüft. Mit **F** starten Sie die Vollbildpräsentation, mit **1–6** wählen Sie ein Kapitel, mit **S** speichern Sie das Abend-Standbild. Die vorhandene funktionsfähige Raumdatei blieb unverändert.
