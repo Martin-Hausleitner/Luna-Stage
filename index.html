@@ -1,0 +1,27 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>LUNA ERP</title>
+<style>html,body{margin:0;height:100%;display:grid;place-items:center;background:#0B3A5B;color:#fff;font:14px "Segoe UI",sans-serif}</style>
+<div id="s">LUNA ERP wird geladen…</div>
+<script>
+(async()=>{
+  try{
+    let b64='';
+    for(let i=0;i<6;i++){
+      const r=await fetch(`payload/${String(i).padStart(2,'0')}.b64`,{cache:'no-store'});
+      if(!r.ok) throw new Error(`Payload ${i}: ${r.status}`);
+      b64+=(await r.text()).trim();
+    }
+    const bin=atob(b64);
+    const bytes=Uint8Array.from(bin,c=>c.charCodeAt(0));
+    const ds=new DecompressionStream('gzip');
+    const html=await new Response(new Blob([bytes]).stream().pipeThrough(ds)).text();
+    document.open();
+    document.write(html);
+    document.close();
+  }catch(e){
+    document.getElementById('s').textContent='LUNA ERP konnte nicht geladen werden: '+e.message;
+    console.error(e);
+  }
+})();
+</script>
