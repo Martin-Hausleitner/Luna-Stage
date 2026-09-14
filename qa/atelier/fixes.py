@@ -10,6 +10,7 @@ def patch(name, old, new):
 
 p=SRC/'room.wgsl'
 p.write_text(re.sub(r'\bmeta\b','flags',p.read_text()))
+patch('room.wgsl','for(var j=0;j<u32(u.counts.x);j++)','for(var j=0u;j<u32(u.counts.x);j++)')
 # History must own its vectors and surface records, not alias the edited scene.
 patch('state-camera.js','Luna.store.document=()=>({','Luna.store.document=()=>clone({')
 # Canvas currentTexture must be copied in the same event-loop turn as rendering it.
