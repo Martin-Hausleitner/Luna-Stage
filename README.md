@@ -24,7 +24,7 @@ No menus competing with the room. If a control does not belong in the kitchen, d
 
 ## One file, no runtime dependencies
 
-No npm, package installation, framework, CDN, external fonts, fetched imagery, iframe, account, API, or application server. The inline JavaScript and WGSL implement the room, geometry, lighting, procedural oak, stone, materials, picking, camera and export. The browser does not send customer data anywhere. Saved presentation preferences use the origin-local key **`luna.stage.v1`**; inaccessible or invalid local storage is handled safely.
+No npm, package installation, framework, CDN, external fonts, fetched imagery, iframe, account, API, or application server. Six WebP stills rendered by this very application are embedded inside the HTML for the first image and the offline filmstrip. They are not fetched assets. The inline JavaScript and WGSL implement the room, geometry, lighting, procedural oak, stone, materials, picking, camera and export. The browser does not send customer data anywhere. Saved presentation preferences use the origin-local key **`luna.stage.v1`**; inaccessible or invalid local storage is handled safely.
 
 For a local secure browser context, serve the directory using Python's standard library:
 
@@ -33,7 +33,7 @@ python3 -m http.server 8476 --bind 127.0.0.1
 # Open http://127.0.0.1:8476/Luna-Stage.html
 ```
 
-WebGPU needs a browser exposing an available adapter in a secure context (HTTPS or localhost). Direct file opening may use WebGPU or the fallback according to browser policy. The **Canvas2D fallback is an explicitly labelled still-frame filmstrip**, never an empty canvas and never reported as GPU rendering. Query `?backend=canvas2d` exercises it. `?chapter=3&paused=1` selects a deterministic chapter for QA. Reduced-motion preference disables autoplay.
+WebGPU needs a browser exposing an available adapter in a secure context (HTTPS or localhost). Direct file opening may use WebGPU or the fallback according to browser policy. The **Canvas2D fallback is an explicitly labelled still-frame filmstrip made from the actual room renders**, never an empty canvas and never reported as GPU rendering. Query `?backend=canvas2d` exercises it. `?chapter=3&paused=1` selects a deterministic chapter for QA. Reduced-motion preference disables autoplay.
 
 ### Small shared architecture
 
@@ -48,7 +48,7 @@ WebGPU needs a browser exposing an available adapter in a secure context (HTTPS 
 
 ### Rendering boundaries
 
-The room is real 3D, rendered by original WGSL using analytic boxes, cylinders and ellipsoids, shadow rays, procedural materials, approximate ambient occlusion and single-bounce reflections. This is not an unbiased path tracer or a manufacturing CAD model. Furniture is illustrative, not a cutting list. Display lighting is approximate, not certified Kelvin photometry. Pixel density adapts while the camera moves and settles at up to 1920 × 1080; PNG export is exactly 1920 × 1080.
+The room is real 3D, rendered by original WGSL using analytic boxes, cylinders and ellipsoids, jittered area-light shadow rays, 28-sample linear-light accumulation, procedural materials, approximate ambient occlusion and single-bounce reflections. This is not an unbiased path tracer or a manufacturing CAD model. Furniture is illustrative, not a cutting list. Display lighting is approximate, not certified Kelvin photometry. Material selection in still mode jumps between the oak and lacquer chapters; free orbit and continuously variable light are WebGPU features. Pixel density adapts while the camera moves and settles at up to 1920 × 1080; PNG export is exactly 1920 × 1080.
 
 ## Sources studied, not embedded
 
@@ -66,7 +66,7 @@ The following public project READMEs were inspected for spatial and implementati
 
 Canonical source: `Luna-Stage.html` on `main`. GitHub Pages publishes the **same bytes** as `index.html` on the dedicated `gh-pages` branch, so the project root opens the room directly. There is no redirect, wrapper, iframe or second application.
 
-`qa/verify.py` is a development-only Python Playwright harness. It serves the local file, uses a real Chromium browser, requires WebGPU initialization, captures the seven requested 1920 × 1080 views, and exercises keyboard, hit testing, sun, orbit, fullscreen, snapshot, persistence and the explicit Canvas2D fallback. `--live --url ...` checks the deployed room. JSON reports and PNG hashes record observed results. Visual judgements are recorded separately in `qa/VISION.md`; an executed shader is not by itself a visual PASS.
+`qa/verify.py` is a development-only Python Playwright harness. `qa/behaviour.py` independently times the full film, tests storage/reduced-motion resilience, and inspects the exported PNG pixels; it also uses Pillow. `qa/bake_stills.py` reproduces the six embedded native-GPU stills. It serves the local file, uses a real Chromium browser, requires WebGPU initialization, captures the seven requested 1920 × 1080 views, and exercises keyboard, hit testing, sun, orbit, fullscreen, snapshot, persistence and the explicit Canvas2D fallback. `--live --url ...` checks the deployed room. JSON reports and PNG hashes record observed results. Visual judgements are recorded separately in `qa/VISION.md`; an executed shader is not by itself a visual PASS.
 
 ```sh
 python3 qa/verify.py --full

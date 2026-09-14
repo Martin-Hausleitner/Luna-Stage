@@ -14,7 +14,7 @@ if not args.url:
     threading.Thread(target=server.serve_forever,daemon=True).start()
     url=f'http://127.0.0.1:{server.server_port}/Luna-Stage.html'
 else:url=args.url
-report={'url':url,'viewport':[1920,1080],'checks':{},'page_errors':[],'console_errors':[],'screenshots':[]}
+report={'source_sha256':hashlib.sha256((root/'Luna-Stage.html').read_bytes()).hexdigest(),'url':url,'viewport':[1920,1080],'checks':{},'page_errors':[],'console_errors':[],'screenshots':[]}
 with sync_playwright() as p:
     chrome='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
     kw={'executable_path':chrome} if Path(chrome).exists() else {}
@@ -23,7 +23,7 @@ with sync_playwright() as p:
     page=ctx.new_page();page.on('pageerror',lambda e:report['page_errors'].append(str(e)))
     page.on('console',lambda m:report['console_errors'].append(m.text) if m.type=='error' else None)
     external=[];page.on('request',lambda r:external.append(r.url) if not r.url.startswith(url.split('?')[0]) and not r.url.startswith('data:') else None)
-    response=page.goto(url+'?chapter=3&paused=1');report['http_status']=response.status
+    response=page.goto(url+'?chapter=3&paused=1');report['http_status']=response.status;report['served_sha256']=hashlib.sha256(response.body()).hexdigest();report['checks']['served_source_identical']=report['served_sha256']==report['source_sha256']
     page.wait_for_function('window.Luna && (Luna.gpu.ready || document.body.classList.contains("fallback"))',timeout=120000)
     page.wait_for_timeout(1000)
     report['gpu']=page.evaluate('({backend:Luna.gpu.backend,ready:Luna.gpu.ready,adapter:Luna.gpu.adapter,errors:Luna.gpu.errors,frames:Luna.gpu.frames,firstImageMS:Luna.gpu.firstImageMS,firstPaintMS:Luna.gpu.firstPaintMS,firstGPUMS:Luna.gpu.firstGPUMS})')
@@ -58,7 +58,7 @@ with sync_playwright() as p:
             old=page.evaluate('Luna.scene.price');page.mouse.click(point['x'],point['y']);report['checks']['worktop_hit']=page.evaluate('Luna.scene.price')!=old
             point=page.evaluate('Luna.cam.project([.05,.55,.926])');old=page.evaluate('Luna.scene.material');page.mouse.click(point['x'],point['y']);report['checks']['door_hit']=page.evaluate('Luna.scene.material')!=old
             page.locator('#sun').evaluate('(e)=>{e.value=6;e.dispatchEvent(new Event("input",{bubbles:true}))}');report['checks']['sun_slider']=abs(page.evaluate('Luna.scene.sun')-.06)<.001
-            old=page.evaluate('Luna.cam.eye.slice()');page.mouse.move(1600,600);page.mouse.down();page.mouse.move(1500,630,steps=10);page.mouse.up();report['checks']['free_orbit']=page.evaluate('Luna.cam.eye')!=old
+            page.locator('#sun').focus();page.keyboard.press('f');page.wait_for_timeout(350);report['checks']['fullscreen_after_sun_focus']=page.evaluate('!!document.fullscreenElement');page.keyboard.press('f');page.wait_for_timeout(250);old=page.evaluate('Luna.cam.eye.slice()');page.mouse.move(1600,600);page.mouse.down();page.mouse.move(1500,630,steps=10);page.mouse.up();report['checks']['free_orbit']=page.evaluate('Luna.cam.eye')!=old
             page.keyboard.press('Escape');report['checks']['skip_to_still']=page.evaluate('Luna.cam.chapter===5&&!Luna.cam.playing')
             with page.expect_download(timeout=120000) as d:page.keyboard.press('s')
             d.value.save_as(str(out/'STAGE-Berger-Abend.png'));report['checks']['snapshot']=page.evaluate('Luna.gpu.lastSnapshot')
@@ -70,8 +70,8 @@ with sync_playwright() as p:
             report['checks']['canvas_fallback']=fb.evaluate('Luna.gpu.backend==="Canvas2D" && document.querySelectorAll("#filmstrip canvas").length===6 && document.querySelector("#still").width>0')
             fb.close()
     else:page.screenshot(path=str(out/'diagnostic.png'))
-    report['network_requests']=external;report['browser']=b.version;report['gpu_errors_end']=page.evaluate('Luna.gpu.errors');b.close()
+    report['checks']['all_boolean_checks']=all(v for v in report['checks'].values() if isinstance(v,bool));report['network_requests']=external;report['browser']=b.version;report['gpu_errors_end']=page.evaluate('Luna.gpu.errors');b.close()
 if server:server.shutdown()
 (out/('live-report.json' if args.live else 'local-report.json')).write_text(json.dumps(report,ensure_ascii=False,indent=2))
 print(json.dumps(report,ensure_ascii=False,indent=2),flush=True)
-if not report['checks']['real_webgpu']:raise SystemExit(2)
+if not report['checks']['all_boolean_checks'] or report['page_errors'] or report['console_errors'] or report['gpu_errors_end']:raise SystemExit(2)

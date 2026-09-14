@@ -1,0 +1,2833 @@
+{
+  "checks": {
+    "autoplay_on_fresh_visit": true,
+    "film_40_to_55_seconds": true,
+    "six_chapters_executed": true,
+    "oak_lacquer_oak_sequence": true,
+    "price_in_chapter_five": true,
+    "ceo_off_entire_film": true,
+    "stille_landing": true,
+    "restored_preferences": true,
+    "ceo_not_restored": true,
+    "no_scrollbars": true,
+    "reduced_motion_no_autoplay": true,
+    "storage_denial_safe": true,
+    "actual_unavailable_gpu_fallback": true,
+    "snapshot_exact_resolution": true,
+    "snapshot_contains_room_pixels": true
+  },
+  "measurements": {
+    "film_wall_seconds": 48.09529999999702,
+    "snapshot_channel_stddev": [
+      35.41927325222032,
+      28.87112194475169,
+      31.537748980702613
+    ],
+    "snapshot_bytes": 3195117
+  },
+  "errors": [],
+  "source_sha256": "17e052f77651eace4c663a23bd2aa39fecd9e6249df100d318e0142a0b0ca5f8",
+  "film_observations": [
+    {
+      "t": 0.08329999999999999,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 0.19990000000000002,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 0.3166,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 0.41669999999999996,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 0.5498999999999999,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 0.6666,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 0.7999000000000002,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 0.9165000000000003,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 1.0166000000000002,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 1.1499,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 1.2665999999999997,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 1.3998999999999993,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 1.4998999999999991,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 1.6165999999999987,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 1.7498999999999982,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 1.8832999999999982,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 1.983199999999998,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 2.099899999999998,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 2.233199999999998,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 2.3497999999999974,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 2.449899999999997,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 2.5831999999999966,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 2.716499999999996,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 2.833199999999996,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 2.933199999999996,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 3.0665999999999953,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 3.183199999999995,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 3.3164999999999942,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 3.4330999999999943,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 3.5498999999999934,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 3.6497999999999933,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 3.7831999999999932,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 3.899799999999993,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 4.033199999999992,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 4.166399999999994,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 4.249799999999994,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 4.3830999999999944,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 4.516499999999994,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 4.633099999999995,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 4.733099999999996,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 4.866399999999997,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 4.983099999999998,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 5.1164,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 5.216400000000001,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 5.333100000000001,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 5.466400000000003,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 5.599700000000004,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 5.716400000000006,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 5.816400000000008,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 5.9331000000000085,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 6.06630000000001,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 6.19970000000001,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 6.316400000000012,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 6.416400000000013,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 6.549700000000013,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 6.6664000000000145,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 6.799700000000015,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 6.916400000000016,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 7.016400000000018,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 7.149700000000017,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 7.266300000000018,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 7.399700000000017,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 7.499700000000018,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 7.633000000000019,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 7.74960000000002,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 7.8830000000000195,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 7.98300000000002,
+      "chapter": 0,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 8.09960000000002,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 8.23290000000002,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 8.33300000000002,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 8.466300000000018,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 8.599600000000017,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 8.699600000000016,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 8.832900000000016,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 8.966300000000016,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 9.066200000000016,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 9.199600000000016,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 9.299600000000014,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 9.432900000000014,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 9.532900000000014,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 9.666300000000012,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 9.79960000000001,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 9.89960000000001,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 10.03290000000001,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 10.132900000000008,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 10.266200000000008,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 10.399600000000008,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 10.499500000000008,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 10.632800000000007,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 10.766200000000007,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 10.866100000000007,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 10.982800000000006,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 11.099500000000008,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 11.216200000000006,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 11.349500000000006,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 11.449500000000004,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 11.582900000000004,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 11.716100000000003,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 11.816100000000002,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 11.949500000000002,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 12.082799999999999,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 12.182799999999997,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 12.316199999999995,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 12.416099999999993,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 12.549499999999995,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 12.682799999999991,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 12.782799999999991,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 12.916099999999988,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 13.016099999999987,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 13.14949999999999,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 13.24939999999999,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 13.382799999999989,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 13.516099999999986,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 13.616099999999985,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 13.749399999999984,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 13.882799999999982,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 13.982699999999982,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 14.116099999999982,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 14.232799999999983,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 14.349399999999985,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 14.465999999999985,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 14.599399999999985,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 14.715999999999985,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 14.832699999999983,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 14.932699999999981,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 15.065999999999983,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 15.16609999999998,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 15.29939999999998,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 15.43269999999998,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 15.549399999999979,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 15.665999999999979,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 15.782699999999977,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 15.915999999999979,
+      "chapter": 1,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 16.032699999999977,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 16.14929999999998,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 16.26599999999998,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 16.39929999999998,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 16.499299999999977,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 16.615999999999975,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 16.749199999999973,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 16.865999999999975,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 16.999299999999973,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 17.09919999999997,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 17.21589999999997,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 17.349299999999968,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 17.48259999999997,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 17.58259999999997,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 17.699299999999972,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 17.83259999999997,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 17.949199999999976,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 18.065899999999974,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 18.18249999999998,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 18.315899999999978,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 18.43259999999998,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 18.532499999999985,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 18.665899999999983,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 18.782499999999985,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 18.91589999999998,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 19.01589999999998,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 19.132499999999986,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 19.265899999999984,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 19.399199999999986,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 19.49909999999998,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 19.632499999999983,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 19.749199999999984,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 19.88259999999998,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 19.98249999999998,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 20.09919999999998,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 20.23249999999998,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 20.34909999999998,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 20.482499999999977,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 20.582499999999975,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 20.715799999999973,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 20.83249999999997,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 20.932499999999973,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 21.065799999999967,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 21.182499999999962,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 21.315799999999957,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 21.415699999999955,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 21.549099999999953,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 21.665799999999955,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 21.799099999999957,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 21.915799999999958,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 22.01579999999996,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 22.14909999999996,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 22.282399999999964,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 22.382399999999965,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 22.499099999999967,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 22.63239999999997,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 22.732399999999966,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 22.865699999999965,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 22.982299999999963,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 23.115699999999965,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 23.215699999999966,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 23.349099999999964,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 23.465599999999966,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 23.59899999999997,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 23.69899999999997,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 23.81569999999997,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 23.948999999999973,
+      "chapter": 2,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 24.08239999999997,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 24.182299999999977,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 24.298999999999978,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 24.43229999999998,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 24.548999999999978,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 24.68229999999998,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 24.782399999999978,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 24.898999999999983,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 25.03229999999998,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 25.14899999999998,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 25.282299999999974,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 25.382199999999973,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 25.498899999999967,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 25.63229999999997,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 25.748899999999967,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 25.88229999999997,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 25.98219999999997,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 26.09889999999996,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 26.23229999999996,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 26.348899999999958,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 26.465499999999956,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 26.582199999999958,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 26.715599999999956,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 26.832199999999958,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 26.93219999999996,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 27.065499999999957,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 27.19879999999996,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 27.31549999999996,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 27.415499999999962,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 27.54889999999996,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 27.682199999999966,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 27.798899999999964,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 27.898899999999962,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 28.032199999999964,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 28.148899999999955,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 28.248799999999957,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 28.382099999999955,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 28.51549999999996,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 28.632199999999962,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 28.74879999999996,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 28.848799999999958,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 28.982099999999956,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 29.11539999999996,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 29.232099999999956,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 29.365499999999958,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 29.465399999999956,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 29.582099999999954,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 29.715499999999956,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 29.832099999999954,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 29.93199999999996,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 30.065399999999958,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 30.182099999999956,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 30.31549999999996,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 30.415399999999956,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 30.548799999999954,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 30.665499999999955,
+      "chapter": 3,
+      "material": 1,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 30.798699999999958,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 30.89869999999996,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 31.032099999999957,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 31.16539999999996,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 31.26539999999996,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 31.381999999999966,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 31.515399999999964,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 31.632099999999966,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 31.732099999999967,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 31.86539999999997,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 31.981999999999974,
+      "chapter": 3,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 32.115299999999976,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 32.21539999999997,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 32.34859999999997,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 32.44859999999996,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 32.58199999999996,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 32.715299999999964,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 32.815299999999965,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 32.94859999999996,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 33.08199999999996,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 33.18199999999997,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 33.31529999999998,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 33.41529999999998,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 33.54859999999998,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 33.68189999999998,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 33.781899999999986,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 33.91529999999999,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 34.015199999999986,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 34.14859999999999,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 34.28189999999999,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 34.382,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 34.5152,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 34.6152,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 34.7485,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 34.88190000000001,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 34.98190000000002,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 35.115300000000026,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 35.21520000000003,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 35.34850000000003,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 35.48190000000003,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 35.581900000000026,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 35.71520000000003,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 35.81520000000003,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 35.94850000000003,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 36.08180000000004,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 36.181900000000034,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 36.31520000000005,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 36.41510000000005,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 36.548500000000054,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 36.68180000000006,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 36.78180000000007,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 36.91520000000007,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 37.01520000000008,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 37.14850000000008,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 37.248500000000085,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 37.38180000000009,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 37.515100000000096,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 37.6318000000001,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 37.74850000000011,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 37.865200000000115,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 37.99850000000011,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 38.09840000000011,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 38.231800000000106,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 38.33180000000011,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 38.46510000000011,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 38.59840000000012,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 38.69840000000013,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 38.83170000000013,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 38.93180000000014,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 39.06500000000013,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 39.18170000000014,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 39.31510000000015,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 39.43180000000015,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 39.54840000000015,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 39.681700000000156,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 39.78170000000016,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 39.91500000000015,
+      "chapter": 4,
+      "material": 0,
+      "price": true,
+      "ceo": false
+    },
+    {
+      "t": 40.01500000000015,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 40.14830000000015,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 40.28170000000014,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 40.39830000000015,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 40.49830000000016,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 40.615000000000165,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 40.74830000000017,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 40.881600000000184,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 40.99840000000018,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 41.09830000000019,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 41.23160000000019,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 41.3484000000002,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 41.48170000000021,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 41.58160000000021,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 41.69830000000021,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 41.83170000000022,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 41.948300000000216,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 42.08160000000022,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 42.18170000000023,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 42.29830000000023,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 42.43160000000023,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 42.54820000000023,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 42.68160000000022,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 42.78160000000022,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 42.89820000000022,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 43.031500000000214,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 43.14830000000022,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 43.24830000000022,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 43.381600000000226,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 43.51490000000023,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 43.63150000000023,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 43.73150000000023,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 43.86480000000023,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 43.981500000000224,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 44.11490000000022,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 44.23160000000022,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 44.348200000000226,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 44.46490000000022,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 44.581500000000226,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 44.714900000000235,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 44.83150000000023,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 44.93150000000023,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 45.06490000000023,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 45.181500000000234,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 45.31480000000025,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 45.431500000000256,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 45.531500000000264,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 45.66480000000026,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 45.79820000000027,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 45.91480000000027,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 46.01480000000027,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 46.148100000000284,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 46.26480000000029,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 46.398100000000305,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 46.51480000000031,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 46.614800000000315,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 46.74810000000033,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 46.86480000000033,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 46.998100000000335,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 47.114800000000336,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 47.214700000000335,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 47.348100000000336,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 47.46470000000034,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 47.59810000000035,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 47.69800000000035,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 47.81470000000036,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    },
+    {
+      "t": 47.94810000000036,
+      "chapter": 5,
+      "material": 0,
+      "price": false,
+      "ceo": false
+    }
+  ],
+  "all_pass": true
+}
