@@ -1,6 +1,6 @@
 {
   "source_sha256": "17e052f77651eace4c663a23bd2aa39fecd9e6249df100d318e0142a0b0ca5f8",
-  "url": "http://127.0.0.1:60143/Luna-Stage.html",
+  "url": "http://127.0.0.1:62765/Luna-Stage.html",
   "viewport": [
     1920,
     1080
@@ -81,10 +81,10 @@
       "description": ""
     },
     "errors": [],
-    "frames": 32,
-    "firstImageMS": 53.600000001490116,
-    "firstPaintMS": 63.899999998509884,
-    "firstGPUMS": 137.69999999552965
+    "frames": 31,
+    "firstImageMS": 75.39999999850988,
+    "firstPaintMS": 115.39999999850988,
+    "firstGPUMS": 235.29999999701977
   },
   "network_requests": [],
   "browser": "152.0.7977.83",

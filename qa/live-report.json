@@ -1,0 +1,46 @@
+{
+  "source_sha256": "17e052f77651eace4c663a23bd2aa39fecd9e6249df100d318e0142a0b0ca5f8",
+  "url": "https://martin-hausleitner.github.io/Luna-Stage/",
+  "viewport": [
+    1920,
+    1080
+  ],
+  "checks": {
+    "served_source_identical": true,
+    "real_webgpu": true,
+    "first_image_under_1s": true,
+    "all_boolean_checks": true
+  },
+  "page_errors": [],
+  "console_errors": [],
+  "screenshots": [
+    {
+      "name": "live-03-evening.png",
+      "sha256": "f1f2c9155480629e93ae1bf36952df202688de6cb6292e1fa7fb1768659816a4"
+    },
+    {
+      "name": "live-05-price-on-worktop.png",
+      "sha256": "911ff92b0f1983f11d2598573ec77af80fe789b9a612fc12b4065da27c0024be"
+    }
+  ],
+  "http_status": 200,
+  "served_sha256": "17e052f77651eace4c663a23bd2aa39fecd9e6249df100d318e0142a0b0ca5f8",
+  "gpu": {
+    "backend": "WebGPU",
+    "ready": true,
+    "adapter": {
+      "vendor": "apple",
+      "architecture": "metal-3",
+      "device": "",
+      "description": ""
+    },
+    "errors": [],
+    "frames": 32,
+    "firstImageMS": 616.7000000029802,
+    "firstPaintMS": 629.3999999985099,
+    "firstGPUMS": 727.8999999985099
+  },
+  "network_requests": [],
+  "browser": "152.0.7977.83",
+  "gpu_errors_end": []
+}
