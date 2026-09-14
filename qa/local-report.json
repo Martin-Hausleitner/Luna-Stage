@@ -1,0 +1,62 @@
+{
+  "url": "http://127.0.0.1:64315/Luna-Stage.html",
+  "viewport": [
+    1920,
+    1080
+  ],
+  "checks": {
+    "real_webgpu": true,
+    "first_image_under_1s": true
+  },
+  "page_errors": [],
+  "console_errors": [],
+  "screenshots": [
+    {
+      "name": "01-arrival.png",
+      "sha256": "a304b1125c2739b3067996d3f7725d1d2d6106417f550589e745b812d1d6e0ca"
+    },
+    {
+      "name": "02-grain-morning.png",
+      "sha256": "4c2bcc0140db0f1a13449d64dc6ebb97e8a16f8b425b094ef9614662e68eb445"
+    },
+    {
+      "name": "03-evening.png",
+      "sha256": "4785913c5b1ff16f298f1169821112fcdf0661163a58a7f4142019212b023ae1"
+    },
+    {
+      "name": "04-lacquer.png",
+      "sha256": "19a0341fdf7114dee5e4df16bed59282a8f0edc021824cac0f4590bf723144d9"
+    },
+    {
+      "name": "05-price-on-worktop.png",
+      "sha256": "6710c0caf13feb8cff865c481afd83533456d2e537831eb674b2ef7041b3de6f"
+    },
+    {
+      "name": "06-wide-still.png",
+      "sha256": "1dc52ca91e45f6c42dc75de8116f051701488b35d5be145efc5d453f65c0109d"
+    },
+    {
+      "name": "07-ceo-margin.png",
+      "sha256": "956da46f97f572c07781d939219b7b151b1d367273e903c13749b0465bd74c60"
+    }
+  ],
+  "http_status": 200,
+  "gpu": {
+    "backend": "WebGPU",
+    "ready": true,
+    "adapter": {
+      "vendor": "apple",
+      "architecture": "metal-3",
+      "device": "",
+      "description": ""
+    },
+    "errors": [],
+    "frames": 16,
+    "firstImageMS": 61.79999999701977,
+    "firstPaintMS": 81.70000000298023,
+    "firstGPUMS": 1035.3999999985099
+  },
+  "network_requests": [],
+  "browser": "152.0.7977.83",
+  "gpu_errors_end": []
+}
