@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#16202a"><meta name="description" content="LUNA STAGE Atelier – eine Küche, die Sie live gestalten. WebGPU, lokale Daten, eine Datei.">
+<title>LUNA STAGE · Berger · Atelier</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='9' fill='%2316202a'/%3E%3Cpath d='M14 11v26h23' fill='none' stroke='%23ded2bd' stroke-width='2'/%3E%3C/svg%3E">
+<style>/*CSS*/</style>
+</head><body>
+<canvas id="still" aria-hidden="true"></canvas>
+<canvas id="room" role="img" tabindex="0" aria-label="Begehbare Küche der Familie Berger. Ziehen Sie zum Umsehen. E öffnet die Raumgestaltung."></canvas>
+<canvas id="inscriptions" aria-hidden="true"></canvas><div id="vignette"></div>
+<div id="world-label" aria-hidden="true"><span id="object-label"></span><small id="object-dim"></small></div>
+<label class="sr" for="sun">Tageslicht am Fenster</label><input id="sun" type="range" min="0" max="100" step="1" value="76" aria-label="Tageslicht am Fenster: Morgen bis Abend">
+<div id="fallback-note">STANDBILDER · WebGPU ist nicht verfügbar. Die Raumgestaltung benötigt WebGPU.</div><div id="filmstrip" aria-label="Kapitelfilm als Standbilder"></div>
+<div id="hint" role="status" aria-live="polite"></div>
+<nav id="rail" aria-label="Küchenfilm und Raumgestaltung"><div id="chapters"><button id="play" aria-label="Film pausieren" title="Leertaste: Film starten oder pausieren">Ⅱ</button></div><div id="rail-actions"><button id="edit-toggle" title="E · Raum gestalten" aria-expanded="false" aria-controls="editor"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 14 9-9 2 2-9 9-3 1 1-3ZM12 6l2 2"/></svg><span>Raum gestalten</span><kbd>E</kbd></button><button id="snapshot-button" title="S · PNG der aktuellen Ansicht" aria-label="Standbild speichern"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h4l1-2h4l1 2h4v10H3Z"/><circle cx="10" cy="11" r="3"/></svg></button></div><div id="brand">EDV Hausleitner <strong>LUNA STAGE</strong></div></nav>
+<footer>Demo · not licensed WAWI · local data · EDV Hausleitner GmbH Linz</footer>
+<aside id="editor" hidden aria-label="Raumgestaltung">
+<header><div><span class="eyebrow">LUNA ATELIER / LIVE</span><h1>Ihre Handschrift.</h1></div><button id="edit-close" class="icon-button" aria-label="Raumgestaltung schließen">×</button></header>
+<div class="tabs" role="tablist" aria-label="Gestaltungsbereiche"><button role="tab" id="tab-room" aria-selected="true" aria-controls="pane-room" data-tab="room">Atmosphäre</button><button role="tab" id="tab-object" aria-selected="false" aria-controls="pane-object" data-tab="object">Objekt</button><button role="tab" id="tab-light" aria-selected="false" aria-controls="pane-light" data-tab="light">Licht</button></div>
+<div id="editor-body">
+<section id="pane-room" role="tabpanel" aria-labelledby="tab-room">
+<p class="intro">Ein Raum. Fünf Charaktere.<br>Material, Farbe und Licht verändern sich live.</p>
+<div id="themes" class="theme-grid"></div>
+<div class="section-head"><h2>Im Raum bewegen</h2><span>01</span></div>
+<p class="help">Berühren Sie ein Möbel. Ziehen Sie es am Boden an seinen Platz. Die rechte Maustaste dreht die Ansicht, Umschalt verschiebt die Kamera.</p>
+<div class="view-buttons"><button data-view="wide">Gesamtansicht</button><button data-view="plan">Von oben</button><button data-view="detail">Materialdetail</button></div>
+<label class="toggle"><input id="snap-toggle" type="checkbox" checked><span>Am 50-mm-Raster einrasten</span></label>
+<div class="section-head"><h2>Ihr Entwurf</h2><span>02</span></div>
+<div class="button-pair"><button id="project-save">Projekt exportieren</button><button id="project-load">Projekt öffnen</button></div>
+<button id="reset-room" class="text-button">Ausgangsküche wiederherstellen</button>
+<p class="help small">Entwürfe bleiben in diesem Browser. Ein Export ist Ihre unabhängige Sicherung. Demo-Preis und Montagewoche werden nicht neu kalkuliert.</p>
+</section>
+<section id="pane-object" role="tabpanel" aria-labelledby="tab-object" hidden>
+<label class="field">Ausgewähltes Element<select id="object-select" aria-label="Element auswählen"></select></label>
+<p id="selection-help" class="help">Wählen Sie ein Element direkt im Raum oder aus der Liste.</p>
+<div id="transform-controls">
+<div class="section-head"><h2>Position</h2><span>mm</span></div>
+<div class="number-grid"><label>X<input id="pos-x" data-transform="x" type="number" step="50" min="-10000" max="10000"></label><label>Höhe<input id="pos-y" data-transform="y" type="number" step="10" min="-1000" max="4000"></label><label>Z<input id="pos-z" data-transform="z" type="number" step="50" min="-10000" max="10000"></label></div>
+<div class="slider-heading"><label for="rotation">Drehung</label><output id="rotation-value">0°</output></div><input id="rotation" type="range" min="-180" max="180" step="1" value="0">
+<div class="section-head"><h2>Abmessungen</h2><span>mm</span></div>
+<div class="number-grid"><label>Breite<input id="size-x" data-size="x" type="number" step="10" min="100" max="8000"></label><label>Höhe<input id="size-y" data-size="y" type="number" step="10" min="10" max="4000"></label><label>Tiefe<input id="size-z" data-size="z" type="number" step="10" min="100" max="8000"></label></div>
+</div>
+<div class="section-head"><h2>Oberfläche</h2><span>LIVE</span></div>
+<label class="field compact">Bereich<select id="surface-select" aria-label="Oberflächenbereich"></select></label>
+<div id="materials" class="material-grid"></div>
+<div class="finish-row"><label class="color-field">Farbton<input id="surface-color" type="color" value="#a9967a" aria-label="Farbton der Oberfläche"></label><button id="surface-clear" class="text-button">Wie Thema</button></div>
+<div class="slider-heading"><label for="roughness">Glanzgrad</label><output id="roughness-value">Seidenmatt</output></div><input id="roughness" type="range" min="5" max="95" value="55">
+<div class="slider-heading"><label for="texture-scale">Texturmaßstab</label><output id="texture-scale-value">100 %</output></div><input id="texture-scale" type="range" min="25" max="300" value="100" step="5">
+<button id="texture-import" class="outlined full">Eigene Textur laden <span>PNG · JPG · WebP</span></button>
+<p id="texture-note" class="help small">Ein Bild wird lokal eingebettet, nicht hochgeladen. Die neue Textur ersetzt die bisherige eigene Textur im Entwurf.</p>
+<div class="button-pair object-actions"><button id="duplicate-object">Duplizieren</button><button id="delete-object">Entfernen</button></div>
+<p class="help small">R dreht um 15°. Pfeiltasten verschieben um 50 mm. Alt: 10 mm. Alle Änderungen lassen sich rückgängig machen.</p>
+</section>
+<section id="pane-light" role="tabpanel" aria-labelledby="tab-light" hidden>
+<p class="intro">Licht macht den Unterschied.<br>Vom ersten Kaffee bis zum letzten Gespräch.</p>
+<div class="light-presets"><button data-light="0.06">Morgen</button><button data-light="0.46">Nachmittag</button><button data-light="0.91">Abend</button></div>
+<div class="slider-heading"><label for="daylight">Sonnenstand</label><output id="daylight-value">Abend</output></div><input id="daylight" type="range" min="0" max="100" value="76">
+<div class="slider-heading"><label for="kelvin">Leuchtenfarbe</label><output id="kelvin-value">2.700 K</output></div><input id="kelvin" type="range" min="2200" max="5000" value="2700" step="50">
+<div class="slider-heading"><label for="light-power">Leuchten</label><output id="light-power-value">100 %</output></div><input id="light-power" type="range" min="0" max="200" value="100" step="5">
+<div class="slider-heading"><label for="exposure">Belichtung</label><output id="exposure-value">0,0 EV</output></div><input id="exposure" type="range" min="-10" max="10" value="0">
+<label class="toggle"><input id="strip-toggle" type="checkbox" checked><span>Arbeitslicht unter den Hängeschränken</span></label>
+<div class="section-head"><h2>Präsentation</h2><span>03</span></div><div class="button-pair"><button id="fullscreen-button">Vollbild <kbd>F</kbd></button><button id="film-button">Küchenfilm <kbd>␣</kbd></button></div>
+<button id="photo-button" class="outlined full">Ansicht als PNG <span>1920 × 1080</span></button>
+<div class="section-head"><h2>Darstellung</h2><span>WebGPU</span></div>
+<label class="field">Renderqualität<select id="quality"><option value="auto">Adaptiv · flüssig beim Bewegen</option><option value="high">Fein · 80 Bildproben im Stillstand</option></select></label>
+<p id="gpu-status" class="help small">WebGPU wird vorbereitet.</p><p class="help small">Kelvin und Lichttransport sind eine visuelle Annäherung, keine lichttechnische Berechnung.</p>
+</section>
+</div>
+<div class="editor-footer"><div class="history-buttons"><button id="undo" aria-label="Rückgängig" title="⌘/Strg Z">↶</button><button id="redo" aria-label="Wiederholen" title="⌘/Strg Umschalt Z">↷</button></div><span id="save-state">Nur auf Ihrem Gerät</span></div>
+</aside>
+<input id="project-file" type="file" accept="application/json,.json" hidden><input id="texture-file" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+<dialog id="confirm-reset"><h2>Zur Ausgangsküche?</h2><p>Der aktuelle Entwurf wird zurückgesetzt. Sie können diesen Schritt anschließend rückgängig machen.</p><div class="button-pair"><button id="reset-cancel">Abbrechen</button><button id="reset-confirm">Zurücksetzen</button></div></dialog>
+<script>/*CODE*/</script>
+</body></html>
