@@ -1,10 +1,12 @@
 {
-  "url": "http://127.0.0.1:53876/Luna-Stage.html",
+  "source_sha256": "17e052f77651eace4c663a23bd2aa39fecd9e6249df100d318e0142a0b0ca5f8",
+  "url": "http://127.0.0.1:60143/Luna-Stage.html",
   "viewport": [
     1920,
     1080
   ],
   "checks": {
+    "served_source_identical": true,
     "real_webgpu": true,
     "first_image_under_1s": true,
     "material_key": true,
@@ -15,13 +17,14 @@
     "worktop_hit": true,
     "door_hit": true,
     "sun_slider": true,
+    "fullscreen_after_sun_focus": true,
     "free_orbit": true,
     "skip_to_still": true,
     "snapshot": {
       "width": 1920,
       "height": 1080,
       "type": "image/png",
-      "bytes": 3195155
+      "bytes": 3195117
     },
     "store_key": true,
     "ceo_default_off": true,
@@ -29,43 +32,45 @@
       "runMM": 3600,
       "modules": 6,
       "moduleMM": 600,
-      "objects": 147
+      "objects": 148
     },
-    "canvas_fallback": true
+    "canvas_fallback": true,
+    "all_boolean_checks": true
   },
   "page_errors": [],
   "console_errors": [],
   "screenshots": [
     {
       "name": "01-arrival.png",
-      "sha256": "e402bd2763a47c22b174477cffcba3f7565db39d393ea94fba7d1e5a0afa74d9"
+      "sha256": "ed6ad8814dc0bf4c1310e52dc97c5f266cddd34194b63ce0bdaef0d7ceeb1569"
     },
     {
       "name": "02-grain-morning.png",
-      "sha256": "82d2e77791bde9b3ecbe68a23df2f32596f7ffea7d32d0e16bca300158290f93"
+      "sha256": "3e354520c3b4f6dfbb2cb6a7ba5c6e2bb0410df1a10f7dba63405def0937b0e9"
     },
     {
       "name": "03-evening.png",
-      "sha256": "1703fc6ee011416aa8f379ceaf3d1a8eef12c169a374cba095017bac5c914509"
+      "sha256": "f1f2c9155480629e93ae1bf36952df202688de6cb6292e1fa7fb1768659816a4"
     },
     {
       "name": "04-lacquer.png",
-      "sha256": "4d7c1e071aa2304771fe4372e8890e5e085b0018416c3192c5a862d27761c2f5"
+      "sha256": "3d1bf3f1e06711703f99c368fa6c7730b90cb8bbd1f8b9962315838cc90b06d0"
     },
     {
       "name": "05-price-on-worktop.png",
-      "sha256": "05038a4c0179fafd076e615a1b61609ab14e402112506b0f207f32923f43fdbd"
+      "sha256": "911ff92b0f1983f11d2598573ec77af80fe789b9a612fc12b4065da27c0024be"
     },
     {
       "name": "06-wide-still.png",
-      "sha256": "bec4c8ae965eda53e96ce451cf4fda68e64751a4621310fd477a63d3cfc7d2c1"
+      "sha256": "d502bb73fb82a14cdcf6a7506c69b54e499a5c50a82363f059796a2712a9f5e5"
     },
     {
       "name": "07-ceo-margin.png",
-      "sha256": "718fa48192364d3bcab95a29988363d94db9262a010d08820eebb7918572f6e0"
+      "sha256": "5ec3f50aa492905dbbe81456454266d7680888ad8e070870cc933234b45d5b91"
     }
   ],
   "http_status": 200,
+  "served_sha256": "17e052f77651eace4c663a23bd2aa39fecd9e6249df100d318e0142a0b0ca5f8",
   "gpu": {
     "backend": "WebGPU",
     "ready": true,
@@ -76,10 +81,10 @@
       "description": ""
     },
     "errors": [],
-    "frames": 29,
-    "firstImageMS": 76.20000000298023,
-    "firstPaintMS": 99.70000000298023,
-    "firstGPUMS": 1062.7000000029802
+    "frames": 32,
+    "firstImageMS": 53.600000001490116,
+    "firstPaintMS": 63.899999998509884,
+    "firstGPUMS": 137.69999999552965
   },
   "network_requests": [],
   "browser": "152.0.7977.83",
