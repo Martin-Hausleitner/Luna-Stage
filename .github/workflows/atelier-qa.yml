@@ -1,0 +1,37 @@
+name: LUNA Atelier native WebGPU QA
+on:
+  push:
+    branches: [atelier-live-20260914]
+    paths:
+      - 'qa/atelier/bundle.b64'
+      - 'qa/atelier/fixes.py'
+      - 'qa/atelier/verify.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prepare browser QA dependencies (not runtime dependencies)
+        run: |
+          python -m pip install playwright==1.55.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Assemble the one-file runtime
+        run: python qa/atelier/build.py
+      - name: Execute native WGSL and browser controls
+        run: python -u qa/atelier/verify.py
+      - name: Preserve source, real frames and reports even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Luna-Stage-Atelier-QA
+          path: |
+            Luna-Stage.html
+            qa/atelier/
+          retention-days: 7
