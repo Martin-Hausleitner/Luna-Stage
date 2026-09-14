@@ -28,7 +28,7 @@ rep("rounded([1.520,.49,.46],[.04,.424,.62],.017,3,[.71,.67,.575]);","rounded([1
 rep('[1.86,.337,.02],3,[.62,.60,.55]','[1.86,.337,.02],3,[.81,.79,.73]')
 s=s.replace('[.63,.61,.55]', '[.81,.79,.73]')
 rep("[.297,.512,.018],12,[.60,.58,.52]","[.297,.512,.018],12,[.60,.58,.53]")
-between('// Two layered architectural pendants','// Three light, curved stools',r'''
+between('for(const x of [-.62,.79]){','// Light, curved stools:',r'''
 // Hollow bronze pendants, illuminated inner diffuser and thin suspension.
 for(const x of [-.62,.79]){
  cyl([x,3.20,.39],.043,.015,4,[.024,.027,.03]);
@@ -38,7 +38,7 @@ for(const x of [-.62,.79]){
  cyl([x,2.430,.39],.137,.005,6,[1,.76,.44]);
 }
 ''')
-between('// Three light, curved stools','// Quiet, hand-thrown ceramics',r'''
+between('// Light, curved stools:','// Hand-thrown ceramics.',r'''
 // Three oak stools: rounded wooden backs, woven linen cushions, foot rails.
 for(const x of [-.85,.04,.94]){
  for(const dx of [-1,1])for(const dz of [-1,1]){
@@ -58,7 +58,7 @@ for(const x of [-.85,.04,.94]){
  rounded([x,.883,1.848],[.238,.048,.025],.008,8,[.85,.70,.51]);
 }
 ''')
-between('// An olive, not a cluster','// Three architectural skirting',r'''
+between('// Fine olive branches and narrow leaves','box([.1,.028,-2.766]',r'''
 // Every leaf is an oriented, thin 3D ellipsoid, not a camera-facing sprite.
 function leaf(c,d,width,col){const length=Math.hypot(...d);O.push({c,s:d.map(v=>Math.abs(v)+width+.003),m:14,col,type:5,shadow:1,extra:[...d,width],tag:'olive-leaf'});}
 function vessel(c,rb,rt,h,thick,m,col){O.push({c,s:[Math.max(rb,rt),h/2,Math.max(rb,rt)],m,col,type:6,shadow:1,extra:[rb,rt,thick,0],tag:'vessel'});}
@@ -94,7 +94,7 @@ vessel([-1.45,1.07,-2.58],.055,.075,.18,.007,7,[.70,.67,.59]);
 for(let j=0;j<11;j++){let a=j*2.4,end=[-1.45+Math.cos(a)*.08,1.27+rnd()*.12,-2.58+Math.sin(a)*.075];rod([-1.45,1.15,-2.58],end,.0016,24,[.19,.24,.06]);for(let k=0;k<4;k++){let c=V.lerp([-1.45,1.16,-2.58],end,.28+k*.22);leaf(c,[Math.cos(a+k)*.025,.011,Math.sin(a+k)*.025],.013,[.16,.24,.061]);}}
 ''')
 rep('box([.12,.008,1.66],[1.58,.006,.50],10,[.44,.40,.33],1,.003);','box([-2.39,.011,2.25],[.80,.008,1.25],10,[.29,.28,.25],1,.003);')
-rep('// Stackless bounding-volume hierarchy.',r'''
+rep('// Stackless BVH.',r'''
 // Real parallax outside the window. Window illumination is an emissive material.
 for(let row=0;row<3;row++)for(let i=0;i<14;i++){
  const x=-10.5-row*9.5-rnd()*2,z=-20+i*3.15+row*.86,h=5.7+rnd()*11.4,w=.75+rnd()*.65,depth=.7+rnd()*1.2;
@@ -125,9 +125,9 @@ for(let j=0;j<3;j++){
 }
 box([2.285,1.804,-2.031],[.082,.011,.002],4,[.045,.060,.065]);
 // Restrained framed abstract art, mounted to the wall, never a UI panel.
-rounded([3.76,1.76,-2.745],[.345,. fifty,.023],.004,8,[.27,.22,.15]);
+rounded([3.76,1.76,-2.745],[.345,.50,.023],.004,8,[.27,.22,.15]);
 box([3.76,1.76,-2.716],[.317,.47,.002],23,[.63,.60,.53]);
-// Stackless bounding-volume hierarchy.'''.replace('. fifty','.50'))
+// Stackless BVH.''')
 rep('guard<4096u','guard<16384u')
 rep("eye:[3.7,1.92,5.95],to:[-.25,1.30,-.60],end:[3.05,1.80,4.85],sun:.52,fov:51", "eye:[3.05,1.86,4.80],to:[-.30,1.32,-.60],end:[2.77,1.81,4.47],sun:.73,fov:51")
 rep("Luna.scene.material=i===3&&phase>.20&&phase<.84?1:0", "Luna.scene.material=(i===0||i===2||i===5||i===3&&phase>.20&&phase<.84)?1:0")
@@ -210,7 +210,7 @@ rep('2.31,.39+pp.y','2.414,.39+pp.y')
 rep('mix(.55,1.8,day)', 'mix(.55,2.35,day)*u.up.w')
 rep('vec3f(.045,.032,.016)*day','vec3f(.045,.032,.016)*day*u.up.w')
 rep(' if(m==14){col+=base*light*.12*max(0.,dot(-n,wl));}', ' if(m==14){col+=base*light*.18*max(0.,dot(-n,wl));col+=vec3f(.13,.10,.04)*pow(max(0.,dot(reflect(rd,n),wl)),18.)*day;}')
-rep(' // Induction zones,', ' if(abs(p.x)<1.4&&p.z>.70&&p.z<1.40&&p.y<.84){col+=base*vec3f(.32,.17,.055)*day*u.up.w*exp(-abs(p.y-.835)*8.);}\n // Induction zones,')
+rep(' if(m==13&&n.y>.8', ' if(abs(p.x)<1.4&&p.z>.70&&p.z<1.40&&p.y<.84){col+=base*vec3f(.32,.17,.055)*day*u.up.w*exp(-abs(p.y-.835)*8.);}\n if(m==13&&n.y>.8')
 rep('if(m!=6&&u.right.w<.5)', 'if(m!=6&&m!=21&&u.right.w<.5)')
 rep('m==13||m==2||m==12||m==8','m==13||m==2||m==12||m==8||m==22')
 rep("light=baseColor(rp,rh.normal,rh.id)*mix(vec3f(.44,.44,.39),vec3f(.13,.17,.25),u.view.z);", "light=direct(rp,shadeNormal(rp,rh.normal,rh.id),rr,rh.id);")
