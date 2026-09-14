@@ -1,41 +1,32 @@
-"""Reviewed compatibility and correctness patches after verified source transfer."""
-import re
+"""Reviewed patches after exact source-transfer verification. No runtime dependencies."""
+import hashlib,json,re
 
-def patch(name, old, new):
-    p=SRC/name
-    s=p.read_text()
-    if old not in s:
-        raise ValueError('Patch anchor missing: '+name+' '+old[:60])
+def patch(name,old,new):
+    p=SRC/name;s=p.read_text()
+    if old not in s:raise ValueError('Patch anchor missing: '+name+' '+old[:60])
     p.write_text(s.replace(old,new))
 
-p=SRC/'room.wgsl'
-p.write_text(re.sub(r'\bmeta\b','flags',p.read_text()))
-patch('room.wgsl','for(var j=0;j<u32(u.counts.x);j++)','for(var j=0u;j<u32(u.counts.x);j++)')
+for name,digest in {'raster.wgsl':'fa4bbc09b6e74153abc5d10fde448d91bb32f9d7f1d56a58045a0c0e367bb9ee','shadow.wgsl':'83ff9462c9c0b5db994a15f6d537c9c60e1aec9cd0edf36824cbddc91d8957e6','raster-engine.js':'237a7bed7623bf90fd5838903ca0b0ca065413e769497b801e2130ae872b2758'}.items():
+    if hashlib.sha256((SRC/name).read_bytes()).hexdigest()!=digest:raise ValueError('Source transfer mismatch: '+name)
 patch('state-camera.js','Luna.store.document=()=>({','Luna.store.document=()=>clone({')
+patch('state-camera.js',"if(!s.styles||", "if(typeof s.strip!=='boolean'||!['auto','high'].includes(s.quality)||![0,1].includes(s.material))throw Error('Ungültige Darstellungseinstellungen.');\nif(!s.styles||")
 patch('renderer.js','for(let i=0;i<n;i++){Luna.gpu.render(w,h);await Luna.gpu.pending;}const pitch=',
       'for(let i=0;i<n;i++){Luna.gpu.render(w,h);if(i<n-1)await Luna.gpu.pending;}const pitch=')
-patch('renderer.js','Luna.gpu.init=async()=>{','Luna.gpu.init=async()=>{await new Promise(resolve=>requestAnimationFrame(()=>setTimeout(resolve,0)));')
-patch('geometry-gpu.js','n.right=build(list.slice(mid))}return index}',
-      'n.right=build(list.slice(mid))}n.escape=nodes.length;return index}')
-patch('geometry-gpu.js','...n.lo,n.count?n.start:n.left,...n.hi,n.count||(-n.right-1)',
-      '...n.lo,n.count?n.start:n.escape,...n.hi,n.count')
-p=SRC/'room.wgsl';s=p.read_text()
-a=s.index('fn trace(');b=s.index('fn sky(',a)
-s=s[:a]+'''fn trace(ro:vec3f,rd:vec3f,limit:f32,anyHit:bool)->Hit{
-var hit=Hit(limit,-1,vec3f(0));var ix=0u;
-for(var step=0u;step<u32(u.counts.w);step++){
-if(ix>=u32(u.counts.w)){break;}let node=nodes[ix];
-if(aabb(ro,rd,node.lo.xyz,node.hi.xyz)>=hit.t){
-if(node.hi.w>0.){ix++;}else{ix=u32(node.lo.w);}continue;}
-if(node.hi.w>0.){let start=u32(node.lo.w);let end=start+u32(node.hi.w);
-for(var i=start;i<end;i++){let o=objects[i];if(o.flags.x==9.&&u.eye.y>3.24){continue;}
-let h=intersect(ro,rd,o);if(h.x<hit.t){hit=Hit(h.x,i32(i),h.yzw);if(anyHit){return hit;}}}}
-ix++;}
-return hit;}
-''' + s[b:];p.write_text(s)
+patch('renderer.js',"ag.fillText('31 %',90,686)","ag.fillText('31 %',90,630)")
+patch('renderer.js',"ag.fillText('Marge · intern',90,734)","ag.fillText('Marge · intern',90,687)")
+# Add subpixel coverage accumulation and avoid unnecessary reserved identifier risks.
+p=SRC/'raster.wgsl';s=p.read_text();s=re.sub(r'\blocal\b','position',s);s=re.sub(r'\bobject\b','oid',s)
+s=s.replace('if(o.flags.x==9.', 'let jitter=vec2f(hash11(u.state.w+17.)-.5,hash11(u.state.w+71.)-.5);clip=vec4f(clip.xy+jitter*2./u.view.xy*clip.w,clip.zw);if(o.flags.x==9.',1)
+p.write_text(s)
+# Replace only the GPU engine, retaining the real camera, document, editor and export APIs.
+p=SRC/'renderer.js';s=p.read_text();a=s.index('Luna.gpu.render=(width,height)=>{');b=s.index('Luna.gpu.fallback=',a);s=s[:a]+s[b:]
+s=s.replace('const shader=/*ROOM_SHADER*/,presentShader=/*PRESENT_SHADER*/;', 'const rasterShader='+json.dumps((SRC/'raster.wgsl').read_text())+',shadowShader='+json.dumps((SRC/'shadow.wgsl').read_text())+';\nconst presentShader=/*PRESENT_SHADER*/;')
+s+='\n'+(SRC/'raster-engine.js').read_text();p.write_text(s)
+# Select a browser only after an independent native canvas clear/readback succeeds.
 p=QA/'verify.py';s=p.read_text()
 s=s.replace('import functools, hashlib, http.server, json, threading, time, traceback','import functools, hashlib, http.server, json, threading, time, traceback, shutil, os')
-s=s.replace("with sync_playwright() as p:","os.environ['DEBUG']='pw:browser'\nwith sync_playwright() as p:")
 s=re.sub(r'^    browser=p\.chromium\.launch\(.*\)$','    from gpu_probe import select_browser\n    browser=p.chromium.launch(**select_browser(p,QA,url.rsplit("/",1)[0]))',s,flags=re.M)
-s=s.replace("Luna.gpu.ready || document.body", "Luna.gpu.firstGPUMS || document.body")
+s=s.replace('Luna.gpu.ready || document.body','Luna.gpu.firstGPUMS || document.body')
+s=s.replace('settle(960,540,1)','settle(1920,1080,12)').replace("'native_resolution':[960,540],'samples':1", "'native_resolution':[1920,1080],'samples':12")
+s=s.replace('PREVIEW ONLY; ONE SAMPLE','NATIVE PREVIEW; VISUAL REVIEW PENDING')
 p.write_text(s)
