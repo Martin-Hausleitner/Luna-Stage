@@ -7,7 +7,10 @@ server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(http.se
 report={}
 with sync_playwright() as p:
     from gpu_probe import select_browser
-    browser=p.chromium.launch(**select_browser(p,QA,url.rsplit('/',1)[0]));page=browser.new_page(viewport={'width':1920,'height':1080});page.on('console',lambda m:print('CONSOLE',m.type,m.text,flush=True));page.on('pageerror',lambda e:print('ERROR',e,flush=True))
+    browser=p.chromium.launch(**select_browser(p,QA,url.rsplit('/',1)[0]))
+    page=browser.new_page(viewport={'width':1920,'height':1080})
+    page.on('console',lambda m:print('CONSOLE',m.type,m.text,flush=True))
+    page.on('pageerror',lambda e:print('ERROR',e,flush=True))
     try:
         page.goto(url+'?chapter=3&paused=1&fresh=1',wait_until='domcontentloaded');page.wait_for_function("window.Luna && (Luna.gpu.firstGPUMS || document.body.classList.contains('fallback'))",timeout=60000)
         report['state']=page.evaluate('Luna.qa.getState()');print('STATE',json.dumps(report['state']),flush=True)
@@ -19,3 +22,4 @@ with sync_playwright() as p:
         page.screenshot(path=str(OUT/'flat-compositor.png'));report['result']='DIAGNOSTIC COMPLETE'
     except Exception as e:report['error']=str(e);report['traceback']=traceback.format_exc();print(traceback.format_exc(),flush=True)
     finally:(QA/'diagnostic.json').write_text(json.dumps(report,indent=2));browser.close();server.shutdown()
+if report.get('error'):raise SystemExit(1)
