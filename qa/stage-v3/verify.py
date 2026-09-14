@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Native WebGPU execution and actual browser evidence. Never label fallback as GPU."""
+"""Native WebGPU browser verification. Software adapters are identified, never hidden."""
 from pathlib import Path
-import base64,hashlib,http.server,threading,json,time,io,re,functools,traceback
+import base64,hashlib,http.server,threading,json,time,io,re,functools,traceback,shutil,os
 from PIL import Image,ImageStat,ImageChops
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'qa/v3';OUT.mkdir(exist_ok=True,parents=True)
 config=json.loads((ROOT/'qa/stage-v3/RUN.json').read_text())
-final=config.get('mode')=='final';w,h=(1920,1080) if final else (1280,720)
-samples=32 if final else 10
+final=config.get('mode')=='final';w,h=(1920,1080) if final else (960,540)
+samples=32 if final else 6
 report={'mode':config.get('mode'),'viewport':[w,h],'screenshots':[],'checks':{},'errors':[]}
 class Handler(http.server.SimpleHTTPRequestHandler):
  def log_message(self,*args):pass
@@ -19,15 +19,19 @@ def record(data,name):
  im=Image.open(io.BytesIO(raw));std=ImageStat.Stat(im.convert('RGB')).stddev
  assert min(std)>5,(name,std)
  return raw
+os.environ['DEBUG']='pw:browser'
 try:
  with sync_playwright() as p:
-  browser=p.chromium.launch(headless=True,args=['--no-sandbox','--enable-unsafe-webgpu','--enable-features=Vulkan','--use-angle=vulkan','--use-vulkan=swiftshader','--disable-vulkan-surface','--disable-dev-shm-usage'])
+  exe=shutil.which('google-chrome') or shutil.which('google-chrome-stable') or p.chromium.executable_path
+  print('BROWSER',exe,flush=True)
+  browser=p.chromium.launch(executable_path=exe,headless=True,args=['--no-sandbox','--enable-unsafe-webgpu','--enable-features=Vulkan','--use-angle=vulkan','--use-vulkan=swiftshader','--disable-vulkan-surface','--disable-dev-shm-usage','--disable-gpu-watchdog','--enable-logging=stderr'])
   page=browser.new_page(viewport={'width':w,'height':h},device_scale_factor=1,accept_downloads=True)
   page.on('pageerror',lambda e:report['errors'].append(str(e)))
+  page.on('crash',lambda:print('PAGE CRASH',flush=True))
   page.on('console',lambda m:print('CONSOLE',m.type,m.text,flush=True) if m.type in ('error','warning') else None)
   page.goto(url+'?chapter=3&paused=1',wait_until='load',timeout=90000)
-  page.wait_for_function('window.Luna && (Luna.gpu.ready || document.body.classList.contains("fallback"))',timeout=180000)
-  gpu=page.evaluate('({ready:Luna.gpu.ready,backend:Luna.gpu.backend,errors:Luna.gpu.errors,adapter:Luna.gpu.adapter,version:Luna.gpu.version})');report['gpu']=gpu
+  page.wait_for_function('window.Luna && (Luna.gpu.firstGPUMS || document.body.classList.contains("fallback"))',timeout=180000)
+  gpu=page.evaluate('({ready:Luna.gpu.ready,backend:Luna.gpu.backend,errors:Luna.gpu.errors,adapter:Luna.gpu.adapter,version:Luna.gpu.version,firstGPUMS:Luna.gpu.firstGPUMS})');report['gpu']=gpu
   print(json.dumps(gpu),flush=True);assert gpu['ready'] and gpu['backend']=='WebGPU',gpu
   page.evaluate('Luna.gpu.snapshotBusy=true')
   report['checks']['native_webgpu']=True
@@ -37,8 +41,7 @@ try:
   report['checks']['individual_3d_leaves']=True
   report['checks']['fifty_camera_sequences']=True
   report['checks']['valid_scene']=page.evaluate('Luna.scene.objects.every(o=>[...o.c,...o.s,...o.extra].every(Number.isFinite))')
-  frames={}
-  chapters=range(6) if final else [2,4]
+  frames={};chapters=range(6) if final else [2,4]
   names=['01-arrival','02-grain-morning','03-evening','04-lacquer','05-price-on-worktop','06-wide-still']
   for i in chapters:
    page.evaluate('(i)=>{Luna.cam.goto(i,false);Luna.hud.draw()}',i)
@@ -75,9 +78,9 @@ try:
   page.evaluate('Luna.cam.goto(2,false)');eye=page.evaluate('Luna.cam.eye')
   page.mouse.move(w*.55,h*.5);page.mouse.down();page.mouse.move(w*.63,h*.52,steps=6);page.mouse.up()
   assert eye!=page.evaluate('Luna.cam.eye');report['checks']['free_orbit']=True
-  old=page.evaluate('Luna.cam.eye');page.mouse.wheel(0,-150);assert old!=page.evaluate('Luna.cam.eye');report['checks']['zoom']=True
+  old=page.evaluate('Luna.cam.eye');page.mouse.wheel(0,-150);page.wait_for_timeout(300);assert old!=page.evaluate('Luna.cam.eye');report['checks']['zoom']=True
   page.keyboard.press('Escape');assert page.evaluate('Luna.cam.chapter')==5;report['checks']['skip']=True
-  page.keyboard.press('f');report['checks']['fullscreen']=page.evaluate('!!document.fullscreenElement');page.keyboard.press('f')
+  page.keyboard.press('f');page.wait_for_timeout(250);report['checks']['fullscreen']=page.evaluate('!!document.fullscreenElement');page.keyboard.press('f')
   report['gpu_errors_end']=page.evaluate('Luna.gpu.errors');assert not report['gpu_errors_end'];assert not report['errors']
   if final:
    embedded=[]
