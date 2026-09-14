@@ -14,15 +14,12 @@ patch('renderer.js','for(let i=0;i<n;i++){Luna.gpu.render(w,h);await Luna.gpu.pe
       'for(let i=0;i<n;i++){Luna.gpu.render(w,h);if(i<n-1)await Luna.gpu.pending;}const pitch=')
 patch('renderer.js',"ag.fillText('31 %',90,686)","ag.fillText('31 %',90,630)")
 patch('renderer.js',"ag.fillText('Marge · intern',90,734)","ag.fillText('Marge · intern',90,687)")
-# Add subpixel coverage accumulation and avoid unnecessary reserved identifier risks.
-p=SRC/'raster.wgsl';s=p.read_text();s=re.sub(r'\blocal\b','position',s);s=re.sub(r'\bobject\b','oid',s)
+p=SRC/'raster.wgsl';s=p.read_text();s=re.sub(r'\blocal\b','position',s);s=re.sub(r'\bobject\b','oid',s);s=re.sub(r'\bactive\b','inscriptionEnabled',s)
 s=s.replace('if(o.flags.x==9.', 'let jitter=vec2f(hash11(u.state.w+17.)-.5,hash11(u.state.w+71.)-.5);clip=vec4f(clip.xy+jitter*2./u.view.xy*clip.w,clip.zw);if(o.flags.x==9.',1)
 p.write_text(s)
-# Replace only the GPU engine, retaining the real camera, document, editor and export APIs.
 p=SRC/'renderer.js';s=p.read_text();a=s.index('Luna.gpu.render=(width,height)=>{');b=s.index('Luna.gpu.fallback=',a);s=s[:a]+s[b:]
 s=s.replace('const shader=/*ROOM_SHADER*/,presentShader=/*PRESENT_SHADER*/;', 'const rasterShader='+json.dumps((SRC/'raster.wgsl').read_text())+',shadowShader='+json.dumps((SRC/'shadow.wgsl').read_text())+';\nconst presentShader=/*PRESENT_SHADER*/;')
 s+='\n'+(SRC/'raster-engine.js').read_text();p.write_text(s)
-# Select a browser only after an independent native canvas clear/readback succeeds.
 p=QA/'verify.py';s=p.read_text()
 s=s.replace('import functools, hashlib, http.server, json, threading, time, traceback','import functools, hashlib, http.server, json, threading, time, traceback, shutil, os')
 s=re.sub(r'^    browser=p\.chromium\.launch\(.*\)$','    from gpu_probe import select_browser\n    browser=p.chromium.launch(**select_browser(p,QA,url.rsplit("/",1)[0]))',s,flags=re.M)
