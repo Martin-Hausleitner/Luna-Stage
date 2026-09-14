@@ -1,5 +1,5 @@
 """Reviewed patches after exact source-transfer verification. No runtime dependencies."""
-import hashlib,json,re
+import hashlib,json,re,runpy
 
 def patch(name,old,new):
     p=SRC/name;s=p.read_text()
@@ -19,9 +19,7 @@ patch('interface.js','Luna.gpu.readPixels(1920,1080,48)','Luna.gpu.readPixels(19
 p=SRC/'raster.wgsl';s=p.read_text();s=re.sub(r'\blocal\b','position',s);s=re.sub(r'\bobject\b','oid',s);s=re.sub(r'\bactive\b','inscriptionEnabled',s)
 s=s.replace('if(o.flags.x==9.', 'let jitter=vec2f(hash11(u.state.w+17.)-.5,hash11(u.state.w+71.)-.5);clip=vec4f(clip.xy+jitter*2./u.view.xy*clip.w,clip.zw);if(o.flags.x==9.',1)
 p.write_text(s)
-# Software Vulkan adapters can execute native GPU commands and read back correct pixels
-# while their browser compositor exposes a black canvas. This is a shipped presentation
-# bridge, not a screenshot substitution. Hardware adapters keep direct WebGPU presentation.
+# Shipped software-adapter bridge; all scene pixels are still rendered by native WebGPU.
 p=SRC/'raster-engine.js';s=p.read_text()
 s=s.replace('let roomDepth,', 'let bridgeBuffer,bridgeBytes=0;\nlet roomDepth,',1)
 s=s.replace("context=$('room').getContext('webgpu');", "Luna.gpu.software=/swiftshader|llvmpipe|software/i.test(JSON.stringify(Luna.gpu.adapter));Luna.gpu.presentation=Luna.gpu.software?'gpu-readback-canvas':'direct-webgpu';\n context=$('room').getContext('webgpu');",1)
@@ -34,3 +32,4 @@ p=SRC/'style.css';p.write_text(p.read_text()+"\nbody.gpu.gpu-readback #room{opac
 p=SRC/'renderer.js';s=p.read_text();a=s.index('Luna.gpu.render=(width,height)=>{');b=s.index('Luna.gpu.fallback=',a);s=s[:a]+s[b:]
 s=s.replace('const shader=/*ROOM_SHADER*/,presentShader=/*PRESENT_SHADER*/;', 'const rasterShader='+json.dumps((SRC/'raster.wgsl').read_text())+',shadowShader='+json.dumps((SRC/'shadow.wgsl').read_text())+';\nconst presentShader=/*PRESENT_SHADER*/;')
 s+='\n'+(SRC/'raster-engine.js').read_text();p.write_text(s)
+runpy.run_path(str(QA/'finishing.py'),init_globals={'SRC':SRC,'QA':QA,'ROOT':ROOT})
