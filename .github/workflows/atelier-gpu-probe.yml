@@ -1,0 +1,32 @@
+name: LUNA native GPU canvas preflight
+on:
+  push:
+    branches: [atelier-live-20260914]
+    paths: ['.github/workflows/atelier-gpu-probe.yml']
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install chromium
+      - name: Verify a completed native WebGPU clear and pixel readback
+        run: |
+          set -o pipefail
+          timeout 150 python -u qa/atelier/probe_only.py 2>&1 | tee qa/atelier/probe-log.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Luna-Atelier-GPU-Preflight
+          path: |
+            qa/atelier/gpu-probe.json
+            qa/atelier/working-browser.json
+            qa/atelier/probe-log.txt
+          retention-days: 7
