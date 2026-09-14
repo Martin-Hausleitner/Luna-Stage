@@ -1,0 +1,35 @@
+name: STAGE reviewed HTML publication
+on:
+  push:
+    branches: ['stage/visual-v2']
+    paths: ['qa/stage-v3/PUBLISH.json']
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: stage-reviewed-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==11.3.0
+      - name: Assemble reviewed artifacts and publish without overwriting concurrent changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -u qa/stage-v3/publish.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Luna-Stage-3.2-delivery
+          path: |
+            _release/
+            Luna-Stage-3.2.zip
+          retention-days: 7
