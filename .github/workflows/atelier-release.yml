@@ -1,0 +1,29 @@
+name: LUNA approved Atelier release candidates
+on:
+  push:
+    branches: [atelier-live-20260914]
+    paths: ['qa/atelier/approved-release.json']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  prepare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify exact approved artifact and prepare non-live candidates
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python qa/atelier/publish.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Luna-Stage-Atelier-Release
+          path: |
+            release-output/
+          retention-days: 30
